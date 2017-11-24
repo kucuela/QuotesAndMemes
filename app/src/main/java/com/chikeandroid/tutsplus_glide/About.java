@@ -1,10 +1,13 @@
 package com.chikeandroid.tutsplus_glide;
 
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class About extends AppCompatActivity {
@@ -18,29 +21,6 @@ public class About extends AppCompatActivity {
     }
 
 
-
-    public void about2 (View view) {
-
-        Intent intent1 = new Intent(this, About.class);
-        startActivity(intent1);
-        finish();
-
-    }
-
-    public void quotes2 (View view) {
-
-        Intent intent1 = new Intent(this, MainActivity.class);
-        startActivity(intent1);
-
-    }
-
-    public void memes2 (View view) {
-
-        Intent intent1 = new Intent(this, SpaceGalleryActivity.class);
-        startActivity(intent1);
-
-
-    }
 
 
 }

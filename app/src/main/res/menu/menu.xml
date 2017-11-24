@@ -7,10 +7,10 @@
 
         <item
             android:id="@+id/action_createx"
-            android:showAsAction="never"
-
+            android:showAsAction="always"
+android:icon="@drawable/log"
             android:title="Changelog"
-            app:showAsAction="never"/>
+            app:showAsAction="always"/>
 
 
 

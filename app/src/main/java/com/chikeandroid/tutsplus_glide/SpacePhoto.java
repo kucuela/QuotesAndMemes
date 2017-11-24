@@ -76,6 +76,22 @@ public class SpacePhoto implements Parcelable {
 
                 new SpacePhoto("https://i.imgur.com/MWVCMdU.jpg","image"),
 
+                new SpacePhoto("https://i.imgur.com/ewvpIaM.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/iUlCodi.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/CeyXbZx.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/8DZQUkZ.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/a2axp2q.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/n24E1CY.jpg","image"),
+                new SpacePhoto("https://i.imgur.com/efVfyVf.jpg","image"),
+
+
+
+
+
+
+
+
+
                 new SpacePhoto("https://i.imgur.com/ghF0bfy.jpg","image"),
 
                 new SpacePhoto("https://i.imgur.com/OizGPCW.jpg","image"),

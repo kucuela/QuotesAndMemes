@@ -49,6 +49,7 @@ public class SpacePhotoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_detail);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         /*getSupportActionBar().setDisplayShowTitleEnabled( true );
         getSupportActionBar().setTitle("Click on an image to share it");*/
@@ -138,6 +139,9 @@ public class SpacePhotoActivity extends AppCompatActivity {
 
 
 
+
+
+
         Bitmap bitmap =getBitmapFromView(activity_character);
         try {
             //File file = new File(this.getExternalCacheDir(),File.separator+ "logicchip.png");
@@ -163,6 +167,16 @@ public class SpacePhotoActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onBackPressed () {
+
+super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+
+
     }
 
 

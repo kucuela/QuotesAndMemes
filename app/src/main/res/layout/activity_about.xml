@@ -26,7 +26,6 @@
 
             android:layout_marginTop="5dp"
             android:background="@color/cardview_light_background"
-            android:elevation="4dp"
 
             android:padding="8dp">
 
@@ -37,13 +36,14 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginRight="16dp"
+                android:onClick="mapa"
                 android:src="@drawable/ping"/>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:scrollbars="none"
+                android:layout_height="match_parent"
                 android:layout_below="@id/cardview_image"
-                android:layout_height="match_parent">
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,14 +51,15 @@
                     android:orientation="vertical">
 
 
-
                     <TextView
                         android:id="@+id/cardview_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/cardview_image"
-                        android:paddingBottom="5dp"
-                        android:paddingTop="10dp"
+
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/cardview_image"
+                        android:paddingLeft="10dp"
                         android:text="Changelog"
                         android:textColor="@color/PrimaryText"
                         android:textSize="24sp"
@@ -72,10 +73,12 @@
                         android:layout_alignParentLeft="true"
                         android:layout_below="@id/cardview_title"
                         android:layout_toRightOf="@id/cardview_image"
-                        android:padding="10dp"
-                        android:text='•••••Verzija 1.0••••• \n\n• Prvobitna nakazna verzija sa stripovskom grafikom, ukinuta iz prostog razloga jer je bila ružna ko kurac  \n\n•••••Verzija 2.0••••• \n\n• Malo bolja verzija od početne, ali takođe ukinuta iz istog razloga kao i prva \n\n•••••Verzija 3.0••••• \n\n• Novi izgled koji prati Google-ov material design \n• Galeriju sa slikama Savića koje možete podeliti plus dodatne slike nastale tokom godina rada u AG okruženju\n• Ispravke sitnih bagova iz prethodnih verzija \n\n•••••Verzija 3.1•••••\n\n• Dodato preko 15 novih fotografija u galeriju\n• Fotografije skinute sa ni manje ni više nego šest različitih Facebook profila\n• Uklonjene sve slike na kojima se ne nalazi TS\n• Redizajniran korisnički interfejs kako bi navigacija kroz aplikaciju bila što lakša\n• Umesto starih animiranih dugmića na koje su se korisnici žalili da ih zbunjuju, dodato je samo jedno novo dugme preko koga se deli slika\n• Promenjene ikonice na karticama \n• Skraćen i optimizovan kod\n• Ispravke sitnih bagova iz prethodnih verzija\n'
-                        android:textColor="@color/SecondaryText"
-                        />
+
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text='\n-----Verzija 3.3-----\n\n• Dodat action bar za sve ekrane \n• Promenjena ikonica za changelog umesto starog teksta \n• Klikom na sliku u changelog-u putujete direktno na tajnu lokaciju \n\n-----Verzija 3.2-----\n\n• Dodato random dugme koje sklapa i šalje potpuno random tekst na osnovu TS-ovih nebuloza \n• Dodato još 7 novih fotografija\n• Izmenjene i skraćene animacije da bi čitava aplikacija radila brže \n\n-----Verzija 3.1-----\n\n• Dodato preko 15 novih fotografija u galeriju\n• Fotografije skinute sa ni manje ni više nego šest različitih Facebook profila\n• Uklonjene sve slike na kojima se ne nalazi TS\n• Redizajniran korisnički interfejs kako bi navigacija kroz aplikaciju bila što lakša\n• Umesto starih animiranih dugmića na koje su se korisnici žalili da ih zbunjuju, dodato je samo jedno novo dugme preko koga se deli slika\n• Promenjene ikonice na karticama \n• Skraćen i optimizovan kod\n• Ispravke sitnih bagova iz prethodnih verzija \n\n-----Verzija 3.0----- \n\n• Novi izgled koji prati Google-ov material design \n• Galeriju sa slikama Savića koje možete podeliti plus dodatne slike nastale tokom godina rada u AG okruženju\n• Ispravke sitnih bagova iz prethodnih verzija \n\n-----Verzija 2.0----- \n\n• Malo bolja verzija od početne, ali takođe ukinuta iz istog razloga kao i prva \n\n-----Verzija 1.0----- \n\n• Prvobitna nakazna verzija sa stripovskom grafikom, ukinuta iz prostog razloga jer je bila ružna ko kurac  '
+                        android:textColor="@color/SecondaryText"/>
                 </LinearLayout>
             </ScrollView>
 
@@ -84,9 +87,6 @@
 
 
     </android.support.v7.widget.CardView>
-
-
-
 
 
 </android.support.design.widget.CoordinatorLayout>

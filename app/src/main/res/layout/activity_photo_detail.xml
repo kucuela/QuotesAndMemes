@@ -11,6 +11,30 @@
     android:layout_height="match_parent"
     tools:context="com.chikeandroid.tutsplus_glide.SpacePhotoActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:elevation="24dp"
+
+
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:windowActionBarOverlay="false">
+
+        <!-- Toolbar is a standard toolbar for use within application content. -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:background="?attr/colorPrimary"
+            android:elevation="24dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
 
 
 
@@ -48,10 +72,11 @@
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
         android:background="@color/colorAccent"
-        android:elevation="24dp"
+        app:elevation="24dp"
+        app:borderWidth="0dp"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
         android:onClick="OnClickShare"

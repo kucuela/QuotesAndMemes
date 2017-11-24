@@ -1,9 +1,12 @@
 package com.chikeandroid.tutsplus_glide;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.IdRes;
@@ -19,8 +22,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,15 +46,18 @@ import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import java.util.Arrays;
+import java.util.Random;
+
 
 
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.activity_main);
 
 
@@ -106,10 +114,28 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_createx) {
 
 
-            Intent intent1 = new Intent(this, About.class);
-            startActivity(intent1);
+           /*Intent intent1 = new Intent(this, About.class);
+          startActivity(intent1);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
 
 
+
+            android.app.AlertDialog.Builder mBuilder = new android.app.AlertDialog.Builder(MainActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.activity_about,null);
+
+
+
+            mBuilder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            mBuilder.setView(mView);
+            android.app.AlertDialog dialog = mBuilder.create();
+            dialog.show();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             return true;
         }
 
@@ -327,12 +353,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void about (View view) {
 
-        Intent intent1 = new Intent(this, About.class);
-        startActivity(intent1);
-
-    }
 
     public void quotes (View view) {
 
@@ -343,9 +364,73 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent1 = new Intent(this, SpaceGalleryActivity.class);
         startActivity(intent1);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
 
     }
+
+    @Override public void onBackPressed()
+    {
+        super.onBackPressed(); overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+    }
+
+    public void random (View view){
+
+
+
+
+
+
+
+
+
+
+
+        String[] r1 = new String[] {"","NE MOŽEŠ SA MNOM TAKO!","JA SAM TI DISCIPLINOVAN!","BRANKO!","","ALO TI!","SIDJI DOLE U GARAŽU!","BRANKO MANI SE HRVATA!","ALO!", "SLUŠAJ ME DOBRO!", "BRANKANE!","ALO BRE!","ALO GORON!","ALO TAKILO!","ALO SVETOMIRE!",
+                "ALO MANJAČA!","MIRO!","ALO BRADONJA!","","NEMOJ DA VAS SVE IZBACIM NAPOLJE","","ALO!","MMM...SAVIĆ!","KOMEĆEŠ TI PIČKU LIZAT?","ALO BRE OVO JE AJFON ŠEST!","KAPIJA!","JA SAM IMO FIRMU OD 20 RADNIKA U ZEN'CI!"};
+        int randomMsgIndex = new Random().nextInt(r1.length - 1);
+        String[] r12 = new String[] {"","JA SAM TI DISCIPLINOVAN!","","OTVORI LOKAL ŠTA SE ZAKLJUČAVATE?","KOMEĆEŠ TI PIČKU LIZAT?","OVO JE MOJA KUĆA!", "JA SAM BRE SRBIN!", "OVO JE SRPSKA KUĆA!","","NEĆE MI OVDE KLANJATI!","JA SAM TRENIRO BOKS" +
+                " NEMOJ DA TE SAD OVDE OBORIM U BARU!","SVE JE POKRIVENO KAMERAMA " +
+                "NE IGRAJTE SE!","","JOJ KAKO SAM JE IZJEBO!","","JEBO SAM SINOĆ JEDNU!","","GROK GROK!","MMM...SAVIĆ!","DOĆEŠ I TI NARED!","KAPIJA!","JA I BRAT SMO PREBILI DŽEPAROŠE NA NAJLONU NEMOJ I TI TAKO DA PROĐEŠ!"};
+        int randomMsgIndex2 = new Random().nextInt(r12.length - 1);
+        String[] r123 = new String[] {"","JA SAM DVADESET GODINA U BRANŠI!","PROVEO SAM STRUJU KROZ OLUKE LOPOVI SU KRV PIŠALI!","","JOJ KAKO SMO JA I POLICAJCI TUKLI DVOJICU U PODRUMU!",
+        "DIGNITE TENDU ODUVAĆE JE VETAR!","","JEBEM MUSLIMANKE I SVETIM IM SE ZA SVE!","LIZAĆEŠ TI MOJ KURAC!","","ALO!","MMM...SAVIĆ!","MIRO,KAKVE SI TO DLAKAVE SLIKE SLALA LJUDIMA?","UBIO SAM DVA MUSLIMANA U HAJDELBERGU I ODSEKO IM GLAVE!"};
+        int randomMsgIndex3 = new Random().nextInt(r123.length - 1);
+        String[] r1234 = new String[] {"","","SVE JE MINIRANO!","JA SAM TUKO TUDJMANA U ZATVORU!","POSTAVIO SAM PAŠTETE PO DVORIŠTU NEMOJ S NOGAMA DA SE IGRAŠ!","","ZAPAMTIĆEŠ SINOĆNU VEČE!","MIRA NIJE REPA BEZ KORENA!","ŠTO OVO MALO NE OČISTITE?",
+        "JA SAM TI SE ZATVORA NALEŽO!","","","JOJ KAKO BI JA TUKO ONOG SMOTANOG IGORA!","","MMM...SAVIĆ!","NEĆE OVI KEROVI ULICU DA MI ASVALTIRAJU!","ONAJ KROKODIL MI JE KUĆU POTOPIO!","KAPIJA!","JA SAM TI DISCIPLINOVAN NE MOŽEŠ SA MNOM TAKO!"};
+        int randomMsgIndex4 = new Random().nextInt(r123.length - 1);
+        String[] r1235 = new String[] {"","OVO JE NJEMAČKA KVALITETA!","VISIO BI TI MENI NA BANDERI!","","IMAL PIVE?","ŠTO MI SE BRANKO NE JAVLJA?",
+                "MUŠTERIJE ŠALJU IMELA!","ODVEŠĆU TE NA FRUŠKU GORU!","","","NEMOJ DA TE VODIM DOLE U GARAŽU I KAČIM NA STRUJU!","JA SAM ROĐENOM BRATU UVEO ZABRANU!","ALO!","ALO BRE!",
+                "A L O !","MUŠTERIJA KAD ODE MOŠ JE JEBAT!","","ŠTO JE OVO OVAKO PRLJAVO?","","ŠTO REĐATE OVE PALETE NA TERASU?","JA SAM BRANKU IZDAO SAMO LOKAL A NE I OVO ISPRED!","ALO BRE!"
+        ,"MIRO DAJ PIŠTOLJ!","","JOJ KAKO SAM SINOĆ SINOĆ JEDNU MALU DEVEDESET PETO GODIŠTE","MMM...SAVIĆ!","","JEBEM TI PORIJEKLO!","LIZAĆEŠ TI MOJ KURAC!","KOMEĆEŠ TI PIČKU LIZAT?"};
+        int randomMsgIndex5 = new Random().nextInt(r123.length - 1);
+
+        Intent intent22 = new Intent(Intent.ACTION_SEND);
+        intent22.setType("text/plain");
+        intent22.putExtra(android.content.Intent.EXTRA_TEXT, r1[randomMsgIndex]+r12[randomMsgIndex2]+r123[randomMsgIndex3]+r1234[randomMsgIndex4]+r1235[randomMsgIndex5]);
+        startActivity(intent22);
+
+
+    }
+
+    public void mapa (View view){
+
+        try{
+
+            // your intent here
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:<45.250349>,<19.783630>?q=<45.250349>,<19.783630>(Welcome to Hell)"));
+            startActivity(intent);
+
+        } catch (ActivityNotFoundException e) {
+            // show message to user
+            Toast.makeText(MainActivity.this, "Nemate instalirane Google Mape.", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+
 
 
 

@@ -1,6 +1,7 @@
 package com.chikeandroid.tutsplus_glide;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -33,6 +34,7 @@ public class SpaceGalleryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.activity_space_gallery);
 
         // Enables ActionBar app icon to behave as action to toggle NavigationDrawer
@@ -126,6 +128,7 @@ public class SpaceGalleryActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(mContext, SpacePhotoActivity.class);
                     intent.putExtra(SpacePhotoActivity.EXTRA_SPACE_PHOTO, spacePhoto);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     startActivity(intent);
                 }
             }
@@ -178,7 +181,7 @@ public class SpaceGalleryActivity extends AppCompatActivity {
     // Method(s) that manage Toolbar.
 
     // onCreateOptionsMenu method initialize the contents of the Activity's Toolbar.
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -199,17 +202,17 @@ public class SpaceGalleryActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_create) {
+        *//*if (id == R.id.action_create) {
 
 
-            *//*Intent intent1 = new Intent(this, MainActivity.class);
+            *//**//*Intent intent1 = new Intent(this, MainActivity.class);
             startActivity(intent1);
-            finish();*//*
+            finish();*//**//*
 
-            *//*Dialog dialog = new Dialog(this,"Poštovani korisnici", "Razvoj aplikacija je dug i zamoran proces i s vremena na vreme čovek mora popiti kafu," +
+            *//**//*Dialog dialog = new Dialog(this,"Poštovani korisnici", "Razvoj aplikacija je dug i zamoran proces i s vremena na vreme čovek mora popiti kafu," +
                     "pa bi bilo lepo sa Vaše strane da ukoliko možete pošaljete 1$ putem Paypal-a " +
                     "na rollbarbullbar@gmail.com.\n\nHvala što koristite naše aplikaciju.");
-            dialog.show();*//*
+            dialog.show();*//**//*
 
             new MaterialStyledDialog.Builder(this)
                     .setTitle("Poštovani korisnici")
@@ -225,22 +228,36 @@ public class SpaceGalleryActivity extends AppCompatActivity {
 
 
             return true;
-        }*/
+        }*//*
 
         if (id == R.id.action_createx) {
 
 
-            /*Intent intent1 = new Intent(this, MainActivity.class);
+            *//*Intent intent1 = new Intent(this, MainActivity.class);
             startActivity(intent1);
-            finish();*/
+            finish();*//*
 
-            /*Dialog dialog = new Dialog(this,"Poštovani korisnici", "Razvoj aplikacija je dug i zamoran proces i s vremena na vreme čovek mora popiti kafu," +
+            *//*Dialog dialog = new Dialog(this,"Poštovani korisnici", "Razvoj aplikacija je dug i zamoran proces i s vremena na vreme čovek mora popiti kafu," +
                     "pa bi bilo lepo sa Vaše strane da ukoliko možete pošaljete 1$ putem Paypal-a " +
                     "na rollbarbullbar@gmail.com.\n\nHvala što koristite naše aplikaciju.");
-            dialog.show();*/
+            dialog.show();*//*
 
-            Intent intent1 = new Intent(this, About.class);
-            startActivity(intent1);
+            android.app.AlertDialog.Builder mBuilder = new android.app.AlertDialog.Builder(SpaceGalleryActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.activity_about,null);
+
+
+
+            mBuilder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            mBuilder.setView(mView);
+            android.app.AlertDialog dialog = mBuilder.create();
+            dialog.show();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
 
 
@@ -252,12 +269,13 @@ public class SpaceGalleryActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void about1 (View view) {
 
         Intent intent1 = new Intent(this, About.class);
         startActivity(intent1);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
     }
 
@@ -265,6 +283,7 @@ public class SpaceGalleryActivity extends AppCompatActivity {
 
         Intent intent1 = new Intent(this, MainActivity.class);
         startActivity(intent1);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
 
 
@@ -281,11 +300,15 @@ public class SpaceGalleryActivity extends AppCompatActivity {
     public void onBackPressed () {
 
         Intent intent1 = new Intent(this, MainActivity.class);
+
         startActivity(intent1);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
 
 
     }
+
+
 
 
 
